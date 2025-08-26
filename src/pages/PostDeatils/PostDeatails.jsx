@@ -7,8 +7,8 @@ export default function PostDeatails() {
   const { data,error,isError,isLoading} = usePostDeatails()
 
    if(isLoading){
-    return <div className='p-10 mx-auto  w-3xl'>
-                 <Skeleton className='h-160 my-4' borderRadius={20} baseColor='#dddd' />
+    return <div className='p-10 mx-auto  max-w-3xl'>
+                 <Skeleton className='h-100 my-4' borderRadius={20} baseColor='#dddd' />
               </div>
    }
    
@@ -21,7 +21,7 @@ export default function PostDeatails() {
    
   return (
  <>
-     <div className='p-10 mx-auto w-3xl space-y-6'>
+     <div className='p-10 mx-auto max-w-3xl space-y-6'>
         <Post post={data.data.post} inSinglPage={true}/>
         </div>
  </>

@@ -14,16 +14,16 @@ const {user,posyHasImage,firstComment,mutate,isPending,commentInput,felUpdate} =
           <p className='mb-2'>{post.body}</p>
           {posyHasImage && <img src={post.image} className='w-full block' alt="" />}
         </div>
-        <div className="post-footer flex justify-between items-center px-2">
-          <div className='flex  cursor-pointer space-x-1 group hover:bg-gray-300 py-2  rounded-2xl '>
-            <Heart className='group-hover:fill-red-500 group-hover:text-red-500' />
+        <div className="post-footer flex justify-between items-center py-2 ">
+          <div className='flex  cursor-pointer  group hover:bg-gray-300   rounded-2xl '>
+            <Heart className='group-hover:fill-red-500 space-x-12 group-hover:text-red-500' />
             <h5>like</h5>
           </div>
-          <Link to={`/postdeatils/${post.id}`} className='flex  cursor-pointer space-x-1  hover:bg-gray-300  py-2  rounded-2xl'>
+          <Link to={`/postdeatils/${post.id}`} className='flex  cursor-pointer   hover:bg-gray-300    rounded-2xl'>
             <MessageCircle />
             <h5>{post.comments.length}  comment</h5>
           </Link>
-          <div className='flex  cursor-pointer space-x-1 hover:bg-gray-300  py-2 rounded-2xl'>
+          <div className='flex  cursor-pointer  hover:bg-gray-300   rounded-2xl'>
             <Forward />
             <h5>share</h5>
           </div>
