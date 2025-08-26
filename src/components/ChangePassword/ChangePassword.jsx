@@ -3,7 +3,7 @@ import { useChangePassword } from '../../hooks/useChangePassword';
 
 
 export default function ChangePassword({setopenform}) {
-    const {isLoading,handleSubmit,register,errors,mutate} = useChangePassword({setopenform})
+    const {isLoading,handleSubmit,register,errors,mutate} = useChangePassword(setopenform)
   return (
     <div>
        <form onSubmit={handleSubmit(mutate)} className="flex max-w-md text-center flex-col gap-3">

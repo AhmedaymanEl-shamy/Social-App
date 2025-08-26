@@ -35,7 +35,7 @@ export default function Navbar() {
         </li>
         
         <li>
-          <NavLink to={'/profile'} className="liclass relative">  {isLoading ? <div className='h-10 w-10'><Skeleton circle={true} className='h-10'  baseColor='#ddd'/></div>:<div><img className='w-11 h-11 rounded-full' src={data.data.user.photo} alt="user image" />
+          <NavLink to={'/profile'} className="liclass relative">  {isLoading ? <div className='h-10 w-10'><Skeleton circle={true} className='h-10'  baseColor='#ddd'/></div>:<div><img className='w-11 h-11 rounded-full' src={data?.data.user.photo} alt="user image" />
            <div className='w-4 h-4 rounded-full bg-white absolute bottom-[5px] right-[-3px]'>
             <span className='w-3.5 h-3.5 rounded-full bg-green-500 absolute bottom-0 right-0'></span>
             </div> </div>}</NavLink>

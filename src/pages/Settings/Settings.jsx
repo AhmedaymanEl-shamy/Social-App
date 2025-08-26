@@ -10,15 +10,11 @@ import ChangePassword from '../../components/ChangePassword/ChangePassword';
 export default function Settings() {
   
       const {image,openFrom,setopenform,handleImage,imageInput,mutate,userData,isLoading,isError,error} = useUploadPhoto()
-     if(isLoading){
-          return <div className='mx-auto w-3xl h-screen'>
-             <Skeleton className="h-160"  borderRadius={20} baseColor='#dddd' />
-          </div>
-        }
+
   
   if(isError){
       return <div >
-               <h2>{error.error.message}</h2>
+               <h2>{error.response.data.error}</h2>
               </div>
   }
   return (
@@ -74,7 +70,7 @@ export default function Settings() {
           </a>
        
         </div>
-        <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{userData.data.user.name}</h5>
+        <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{userData?.data.user.name}</h5>
         <span className="text-sm text-gray-500 dark:text-gray-400">Settings</span>
         <div onClick={()=>{setopenform(!openFrom)}} className="mt-4 flex space-x-3 lg:mt-6">
           <button

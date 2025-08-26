@@ -28,7 +28,7 @@ export default function CreatePost({updating,postInfo,postId}) {
                 {updating ? <h2 className='font-semibold text-large text-slate-700'>Update post</h2>:<h2 className='font-semibold text-large text-slate-700'>Post somthing</h2>}
             <div className='space-y-4'>
                <div onClick={handleModalOpen} className='flex justify-center items-center'>
-                {!updating&& <div className='pe-1'>{isLoading ? <div ><Skeleton circle={true} height={50} width={50}  baseColor='#ddd'/></div>:<img className='w-16 h-13 rounded-full' src={data.data.user.photo} alt="user image" />}
+                {!updating&& <div className='pe-1'>{isLoading ? <div ><Skeleton circle={true} height={50} width={50}  baseColor='#ddd'/></div>:<img className='w-16 h-13 rounded-full' src={data?.data.user.photo} alt="user image" />}
                </div>}
                 {updating? <input ref={bodyInput} defaultValue={postInfo} className="commentInput" placeholder="....." />:<input ref={bodyInput}  className="commentInput" placeholder="Whats's on your mind?" />}
                    <label> <input ref={imageInput} onChange={handleImage} type="file" className='hidden' />

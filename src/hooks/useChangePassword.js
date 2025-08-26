@@ -50,15 +50,15 @@ export function useChangePassword(setopenform){
                     console.log(res);
                     toast.success('Password changed')
                     navigate('/login')
-                    setToken(res.data.token)
+                    setToken(null)
                     setIsLoading(null)
                     setopenform(null)
                     
                 },
                 onError:(err)=>{
                     console.log(err);
-                    toast.error(err.error)
-                    
+                    toast.error(err.error.message)
+
                     
                 }
             })
