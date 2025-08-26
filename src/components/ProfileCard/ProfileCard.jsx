@@ -8,12 +8,12 @@ export default function ProfileCard({userData,isLoading,setopenUserPhoto}) {
  
   return (
     
-        <div className="w-1/2">
+        <div>
   <Card >
       <div className="flex justify-end">
        
       </div>
-      <div className="flex flex-col items-center ">
+      <div className="flex flex-col items-center px-10git ">
         <div>
              {isLoading ? <Skeleton width={80} height={80} borderRadius={50} baseColor='#dddd'/>: <img onClick={()=>setopenUserPhoto(true)} className='w-20 h-20 rounded-full'  src={userData?.data.user.photo} alt="profile user photo" />}
               </div>
