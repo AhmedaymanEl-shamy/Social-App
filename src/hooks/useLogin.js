@@ -9,7 +9,7 @@ import * as zod from 'zod'
 
 const shceme = zod.object({
   email:zod.string().nonempty('email is required').regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,'email must be valid'),
-  password:zod.string().nonempty('password is required').regex(/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/,'password must contain capital char and number and sympol ')
+  password:zod.string().nonempty('password is required').regex(/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/,'Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:')
 })
 
 export function useLogin(){
