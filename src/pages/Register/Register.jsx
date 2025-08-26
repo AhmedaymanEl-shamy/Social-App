@@ -14,7 +14,7 @@ export default function Register() {
         <title> Sign up for Lokapp</title>
       </Helmet>
     <div className='h-screen'>
-    <div className='w-xl py-6 bg-white shadow-2xl mx-auto my-10 px-5 rounded-2xl'>
+    <div className='max-w-xl py-10 bg-white shadow-2xl mx-auto my-10 px-5 rounded-2xl'>
       <form onSubmit={handleSubmit(handleRegister)}>
         <div className='flex flex-col gap-6'>
           <h1 className='text-center font-semibold '>Register Page</h1>
