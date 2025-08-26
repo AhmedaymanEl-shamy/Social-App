@@ -5,7 +5,7 @@ import axios from "axios"
 import toast from "react-hot-toast"
 
 export function usePostHeader(commentId,postId){
-     console.log(commentId);
+    
      
  const {userId,token,setFelUpdate,felUpdate,isEdite,setIsEdite} = useContext(TokenContext)
  const QueryClient =  useQueryClient()

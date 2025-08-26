@@ -13,14 +13,15 @@ export default function Navbara() {
 
   const {token,logingOut} = useContext(TokenContext)
  const [isMenuOpen, setIsMenuOpen] = useState(false);
+ const [MenuOpen, setMenuOpen] = useState(true);
   const{data,isLoading} = useNavbar()
 
 
   return (
  <Navbar shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
        <NavbarContent>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        <NavbarMenuToggle onClick={(()=>setMenuOpen(true))}
+         
           className="sm:hidden absolute end-0 me-10 p-4" 
         />
         <NavbarBrand>
@@ -56,39 +57,39 @@ export default function Navbara() {
           <NavLink to={'/register'} className="liclass">Register</NavLink>
         </li></>}
       </NavbarContent>
-      <NavbarMenu>
+        {MenuOpen? <NavbarMenu>
      
-          <NavbarMenuItem >
+          <NavbarMenuItem>
              {token ? <><NavbarItem isActive>
-          <NavLink  color="foreground" to={'/home'}>
+          <NavLink onClick={()=>setMenuOpen(false)}  color="foreground" to={'/home'}>
             Home
           </NavLink>
         </NavbarItem>
         <NavbarItem isActive>
-          <NavLink aria-current="page" to={'/settings'}>
+          <NavLink onClick={()=>setMenuOpen(false)} aria-current="page" to={'/settings'}>
             Settings
           </NavLink>
         </NavbarItem>
         <NavbarItem isActive>
-          <NavLink color="foreground" to={'/profile'}>
+          <NavLink onClick={()=>setMenuOpen(false)} color="foreground" to={'/profile'}>
            Profile
           </NavLink>
         </NavbarItem>
-         <li onClick={logingOut} className="liclass cursor-pointer">
+         <li  onClick={logingOut} className="liclass cursor-pointer">
             <LogOut />
         </li></>:<>
         <NavbarItem isActive>
-          <NavLink color="foreground" to={'/login'}>Login</NavLink>
+          <NavLink onClick={()=>setMenuOpen(false)}  color="foreground" to={'/login'}>Login</NavLink>
           </NavbarItem> 
         <NavbarItem isActive>
-          <NavLink color="foreground" to={'/register'}>Register</NavLink>
+          <NavLink onClick={()=>setMenuOpen(false)} color="foreground" to={'/register'}>Register</NavLink>
           </NavbarItem> 
           
          
         </>}
           </NavbarMenuItem>
      
-      </NavbarMenu>
+      </NavbarMenu>:''}
     </Navbar>
 
 
