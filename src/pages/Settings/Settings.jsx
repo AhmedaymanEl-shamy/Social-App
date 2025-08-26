@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet';
+import UploadPhoto from '../../components/Uploadphoto/UploadPhoto';
 
 export default function Settings() {
   return (
