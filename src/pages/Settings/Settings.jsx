@@ -3,11 +3,13 @@ import UploadPhoto from '../../components/Uploadphoto/UploadPhoto';
 
 export default function Settings() {
   return (
-    <div className='flex justify-center items-center p-6'>
+    <>
         <Helmet>
             <title>Settings</title>
         </Helmet>
+    <div className='flex justify-center items-center p-6'>
       <UploadPhoto/>
     </div>
+    </>
   )
 }

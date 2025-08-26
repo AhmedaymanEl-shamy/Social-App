@@ -12,7 +12,7 @@ export function useCreatPost(postId){
     const imageInput = useRef('')
     const bodyInput = useRef('')
     const QueryClient = useQueryClient()
-    console.log(setIsEdite);
+ 
     
 
     function getUserData(){
