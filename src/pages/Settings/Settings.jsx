@@ -3,9 +3,9 @@ import { Card, Dropdown, DropdownItem } from "flowbite-react";
 import { Link } from "react-router-dom";
 import userUploadPhoto from '../../assets/socialapp.png'
 import toast from "react-hot-toast";
-import ChangePassword from "../ChangePassword/ChangePassword";
 import { useUploadPhoto } from "../../hooks/useUploadPhoto";
 import Skeleton from "react-loading-skeleton";
+import ChangePassword from '../../components/ChangePassword/ChangePassword';
 
 export default function Settings() {
   

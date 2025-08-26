@@ -58,7 +58,7 @@ export function useChangePassword(setopenform){
                 onError:(err)=>{
                     console.log(err);
                     toast.error(err.error)
-                    setIsLoading(null)
+                    
                     
                 }
             })
