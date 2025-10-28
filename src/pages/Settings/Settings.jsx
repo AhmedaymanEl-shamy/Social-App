@@ -60,7 +60,7 @@ export default function Settings() {
           className="mb-3 w-50 h-50 rounded-full shadow-lg"
         />}
       </label>
-        <h3 className="font-medium text-gray-500 dark:text-white">Change user photo</h3>
+        <h3 className="font-medium text-gray-500 mb-3 mt-2 dark:text-white">Change user photo</h3>
          <div onClick={image ? mutate:()=>toast.error('choose image')} className="mb-20 flex space-x-3 lg:mt-6">
           <a
             href="#"

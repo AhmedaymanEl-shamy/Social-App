@@ -6,14 +6,22 @@ import toast from "react-hot-toast"
 
 
 export function useCreatPost(postId){
+
+    
      const  {token,setIsEdite} = useContext(TokenContext)
     const [modalOpen, setModalOpen] = useState(false)
     const [image, setImage] = useState(null)
     const imageInput = useRef('')
     const bodyInput = useRef('')
     const QueryClient = useQueryClient()
+         const creatPostInput = useRef('')
+                        const [caption ,setCaption] = useState("")
+                        const [imagFile,setImageFile] = useState(null)
+                        const [imagePreview,setImagePreview] = useState("")
  
-    
+          function createTest(e){
+            
+                }
 
     function getUserData(){
         const options = {
@@ -42,8 +50,10 @@ export function useCreatPost(postId){
 
     function handleCloseOpen() {
         setModalOpen(false)
-        setImage(null)
+        setImageFile(null)
         setIsEdite(false)
+        setImagePreview("")
+        setCaption("")
     }
 
     function handleImage() {
@@ -53,23 +63,34 @@ export function useCreatPost(postId){
     }
         function creatPosts(){
 
-         const myForm  = new FormData()
-         
-                if(bodyInput.current.value){
-                    myForm.append('body',bodyInput.current.value)
-                }
-            if(imageInput.current.files[0]){
-                  myForm.append('image',imageInput.current.files[0])
-            }
        
 
+                    const PostData={
+                        body:caption,
+                        image:imagFile
+                    }
+                    
+                    if(caption.trim()== "" && imagFile == null){
+                        return onError()
+                    }
+            const formData = new FormData()
+            if(caption){
+
+                formData.append('body',caption)
+            }
+            if(imagFile){
+
+                formData.append('image',imagFile)
+            }
+                  
+          
             const options2 = {
                 method:'POST',
                 url:'https://linked-posts.routemisr.com/posts',
                 headers:{
                     token
                 },
-                data:myForm
+                data:formData
             }
            return axios.request(options2)
         }
@@ -77,10 +98,10 @@ export function useCreatPost(postId){
         mutationFn:creatPosts,
         onSuccess:(res)=>{
             console.log(res);
-            bodyInput.current.value=''
             QueryClient.invalidateQueries(['get all posts'])
             toast.success('Post created')
             handleCloseOpen()
+
             
         },
         onError:(error)=>{
@@ -96,8 +117,8 @@ export function useCreatPost(postId){
            if(bodyInput.current.value){
             myForm2.append('body', bodyInput.current.value)
            }
-            if(imageInput.current.value[0]){
-                  myForm2.append('image',imageInput.current.files[0])
+            if(imagFile){
+                  myForm2.append('image',imagFile)
             }
                 const options3 = {
                     method:'PUT',
@@ -143,5 +164,13 @@ export function useCreatPost(postId){
                 handleUpdateMutate,
                 bodyInput,
                 imageInput,
+                caption,
+                setCaption,
+                imagFile,
+                setImageFile,
+                createTest,
+                creatPosts,
+                imagePreview,
+                setImagePreview,
             }
 }
