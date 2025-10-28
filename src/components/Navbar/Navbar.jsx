@@ -80,17 +80,17 @@ function notMenuToggle(){
        </ul>
 
 
-    </Navbar>
-      <div ref={mobMenuBar} className='flex bg-slate-300 justify-center z-50 -mt-2  text-white absolute -top-110 transition-all duration-500  w-full items-center '> <ul className='space-y-4  w-1/2 text-center p-4  md:hidden rounded-b-2xl'>   
+      <div ref={mobMenuBar} className='flex bg-slate-300 justify-center z-50 -mt-2  text-white absolute -top-110 transition-all end-0 start-0 duration-500   items-center '> <ul className='space-y-4  w-1/2 text-center p-4  md:hidden rounded-b-2xl'>   
                 {token?<>
-                  <li onClick={notMenuToggle} className='border-b-2 pb-2 border-slate-300  hover:bg-slate-400 hover:rounded-md hover:p-1 hover:font-semibold hover:transition-all'><Link className='text-white ' href="/">Home</Link></li>
-                  <li onClick={notMenuToggle} className='border-b-2 pb-2 border-slate-300  hover:bg-slate-400 hover:rounded-md hover:p-1 hover:font-semibold hover:transition-all'><Link className='text-white ' href="/settings">Setting</Link></li>
-                  <li  onClick={notMenuToggle} className='border-b-2 pb-2 border-slate-300 hover:bg-slate-400 hover:rounded-md hover:p-1 hover:font-semibold hover:transition-all'><Link className='text-white ' href="profile">Profile</Link></li>
-                  <li onClick={logingOut} className=' border-b-2 pb-2 border-slate-300 hover:bg-slate-400 hover:rounded-md hover:p-1 cursor-pointer hover:font-semibold hover:transition-all'>LogOut</li>
-              </>:<><li onClick={notMenuToggle} className='border-b-2 pb-2 border-slate-300  hover:bg-slate-400 hover:rounded-md hover:p-1 hover:font-semibold hover:transition-all'><Link  className='text-white' href="/login">Login</Link></li>
-              <li onClick={notMenuToggle} className='border-b-2 pb-2 border-slate-300  hover:bg-slate-400 hover:rounded-md hover:p-1 hover:font-semibold hover:transition-all'><Link  className='text-white' href="/register">Register</Link></li></>}
+                  <li onClick={notMenuToggle} className='border-b-2 pb-2 border-slate-300 cursor-pointer  hover:bg-slate-400 hover:rounded-md hover:p-1 hover:font-semibold hover:transition-all'><Link className='text-white ' href="/">Home</Link></li>
+                  <li onClick={notMenuToggle} className='border-b-2 pb-2 border-slate-300 cursor-pointer  hover:bg-slate-400 hover:rounded-md hover:p-1 hover:font-semibold hover:transition-all'><Link className='text-white ' href="/settings">Setting</Link></li>
+                  <li  onClick={notMenuToggle} className='border-b-2 pb-2 border-slate-300 cursor-pointer hover:bg-slate-400 hover:rounded-md hover:p-1 hover:font-semibold hover:transition-all'><Link className='text-white ' href="profile">Profile</Link></li>
+                  <li onClick={logingOut} className=' border-b-2 pb-2 border-slate-300  hover:bg-slate-400 hover:rounded-md hover:p-1 cursor-pointer hover:font-semibold hover:transition-all'>LogOut</li>
+              </>:<><li onClick={notMenuToggle} className='border-b-2 pb-2 border-slate-300 cursor-pointer  hover:bg-slate-400 hover:rounded-md hover:p-1 hover:font-semibold hover:transition-all'><Link  className='text-white' href="/login">Login</Link></li>
+              <li onClick={notMenuToggle} className='border-b-2 pb-2 border-slate-300 cursor-pointer  hover:bg-slate-400 hover:rounded-md hover:p-1 hover:font-semibold hover:transition-all'><Link  className='text-white' href="/register">Register</Link></li></>}
                 
             </ul></div>
+    </Navbar>
 
 
 
