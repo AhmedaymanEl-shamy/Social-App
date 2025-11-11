@@ -17,6 +17,10 @@
     @media (width >= 96rem ) {
         max-width: 80rem ;
     }
+      width: 85%;
+    @media (width >= 40rem /* 640px */) {
+        max-width: 40rem /* 640px */;
+    }
 }
 
 @layer components{

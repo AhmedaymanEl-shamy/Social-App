@@ -13,8 +13,10 @@ export default function Register() {
      <Helmet>
         <title> Sign up for Lokapp</title>
       </Helmet>
-    <div className='h-screen'>
-    <div className='max-w-xl py-10 bg-white shadow-2xl mx-auto my-10 px-5 rounded-2xl'>
+    <div className='bg-slate-300'>
+  <div className="container flex justify-center items-center   ">
+
+    <div className='py-5 bg-white shadow-2xl mx-auto w-xl my-5  px-5 rounded-2xl'>
       <form onSubmit={handleSubmit(handleRegister)}>
         <div className='flex flex-col gap-6'>
           <h1 className='text-center font-semibold '>Register Page</h1>
@@ -38,6 +40,7 @@ export default function Register() {
 
       </form>
 
+    </div>
     </div>
     </div>
     </>

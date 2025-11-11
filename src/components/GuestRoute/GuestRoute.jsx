@@ -7,6 +7,6 @@ export default function GuestRoute({children}) {
     if(token){
         return <Navigate to={'/home'}/>
     }else{
-        return <div className='bg-slate-200'>{children}</div>
+        return <div>{children}</div>
     }
 }

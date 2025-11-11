@@ -16,8 +16,10 @@ export default function Login() {
       <Helmet>
         <title>Lokapp-Log in or sign up</title>
       </Helmet>
-<div className='h-screen'>
-     <div className='max-w-xl bg-white py-10 shadow-2xl mx-auto my-10 px-5 rounded-2xl mt-30'>
+<div className='absolute end-0 start-0 top-0 bottom-0  bg-slate-300'>
+  <div className="container flex justify-center items-center  ">
+
+     <div className='w-full bg-white py-15 shadow-2xl  my-10 px-5 mt-30 rounded-2xl'>
       <form onSubmit={handleSubmit(handleLogin)}>
         <div className='flex flex-col gap-6'>
           <h1 className='text-center font-semibold '>Login Page</h1>
@@ -32,6 +34,7 @@ export default function Login() {
 
     </div>
 </div>
+  </div>
 </>
   )
 }
